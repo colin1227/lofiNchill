@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.sendFile("/Users/colin/Desktop/lofi/wut.html");
+  console.log(__dirname.replace("/routes", ""));
+  res.sendFile(__dirname.replace("/routes", "") + "/wut.html");
 });
 
 module.exports = router;
