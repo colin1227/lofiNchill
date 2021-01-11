@@ -5,5 +5,28 @@
   <h1 class="bruh"></h1>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="typer.js"></script>
+<script>
+  //DOM element to manipulate
+  const headerText = $(".bruh");
+
+  // constant variables
+  const sentence = "Can I eat gushers out of your ass?";
+
+  const handleType = (character, wait) => {
+    setTimeout(() => {
+        headerText.text(character);
+    }, wait);
+
+    return Math.random() / 2 * 350 + wait;
+  }
+
+  const type = () => {
+    let speed = 0;
+    for (let i = 0; i <= sentence.length; i++) {
+      speed = handleType(sentence.slice(0, i), speed);
+    }
+  };
+
+  type();
+</script>
 </html>
